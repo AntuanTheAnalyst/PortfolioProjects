@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Add Cafe{% endblock %}
+
+{% block content %}
+
+<h2>Add New Cafe</h2>
+
+<form method="POST">
+
+    <div class="mb-3">
+        <label class="form-label">Cafe Name</label>
+        <input type="text" class="form-control" name="name" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input type="text" class="form-control" name="location" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Google Maps URL</label>
+        <input type="text" class="form-control" name="map_url">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Image URL</label>
+        <input type="text" class="form-control" name="img_url">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Seats</label>
+        <input type="text" class="form-control" name="seats">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Coffee Price</label>
+        <input type="text" class="form-control" name="coffee_price">
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="wifi">
+        <label class="form-check-label">Has Wifi</label>
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="sockets">
+        <label class="form-check-label">Has Sockets</label>
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="toilet">
+        <label class="form-check-label">Has Toilet</label>
+    </div>
+
+    <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" name="calls">
+        <label class="form-check-label">Can Take Calls</label>
+    </div>
+
+    <button type="submit" class="btn btn-success">Add Cafe</button>
+
+</form>
+
+{% endblock %}
