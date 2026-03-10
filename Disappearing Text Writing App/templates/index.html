@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="text-center mb-3">
+    <button class="btn btn-danger float-start">
+        <i class="bi bi-x-lg"></i>
+    </button>
+
+    <h3 class="fw-bold">Disappearing Text Writing App</h3>
+    <p class="text-muted">Start typing. If you stop for 5 seconds, everything will be deleted.</p>
+</div>
+
+<div class="mb-3">
+    <textarea
+        id="writingArea"
+        class="form-control"
+        rows="10"
+        placeholder="Start typing..."
+    ></textarea>
+</div>
+
+<div class="d-flex justify-content-between">
+
+    <div>
+        <strong>Timer:</strong> <span id="timer">5</span>s
+    </div>
+
+    <div>
+        <strong>Words:</strong> <span id="wordCount">0</span>
+    </div>
+
+</div>
+
+<div id="failScreen" class="fail-screen">
+
+    <div class="fail-box">
+
+        <h2 class="fail-title">You failed...</h2>
+
+        <button id="retryBtn" class="retry-btn">
+            Try again!
+        </button>
+
+    </div>
+
+</div>
+
+{% endblock %}
