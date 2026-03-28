@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Palette Generator</title>
+</head>
+<body style="font-family: Arial; text-align: center;">
+
+    <h1>🎨 Color Palette Generator</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if image %}
+        <h2>Uploaded Image:</h2>
+        <img src="{{ image }}" width="300">
+    {% endif %}
+
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+        {% if colors %}
+            {% for color, percent in colors %}
+                <div style="
+                    width: 120px;
+                    height: 120px;
+                    background-color: {{ color }};
+                    margin: 10px;
+                    color: white;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                ">
+                    <div>{{ color }}</div>
+                    <div>{{ "%.1f"|format(percent) }}%</div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+</body>
+</html>
